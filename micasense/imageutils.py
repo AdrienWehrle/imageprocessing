@@ -353,14 +353,14 @@ def align_capture(capture, ref_index=None, warp_mode=cv2.MOTION_HOMOGRAPHY, max_
 
 # apply homography to create an aligned stack
 def aligned_capture(capture, warp_matrices, warp_mode, cropped_dimensions, match_index, img_type='reflectance',
-                    interpolation_mode=cv2.INTER_LANCZOS4):
+                    irradiance_list, interpolation_mode=cv2.INTER_LANCZOS4):
     width, height = capture.images[match_index].size()
 
     im_aligned = np.zeros((height, width, len(warp_matrices)), dtype=np.float32)
 
     for i in range(0, len(warp_matrices)):
         if img_type == 'reflectance':
-            img = capture.images[i].undistorted_reflectance()
+            img = capture.images[i].undistorted_reflectance(irradiance_list[i])
         else:
             img = capture.images[i].undistorted_radiance()
 
