@@ -60,7 +60,7 @@ class Metadata(object):
         val = None
         try:
             assert len(self.exif) > 0
-            val = self.exif[0][item]
+            val = self.exif[item]
             if index is not None:
                 try:
                     if isinstance(val, unicode):
