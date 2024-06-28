@@ -25,7 +25,7 @@ datasets.
 
 For a user of RedEdge or Altum that wants a turnkey processing solution, this repository probably is not the best place
 to start. Instead consider one of the MicaSense processing partners who provide turnkey software for processing and
-analysis.
+analysis.pyexiftool==0.4.13
 
 ### Tutorial Articles
 
@@ -96,7 +96,7 @@ then [create an issue on github](https://github.com/micasense/imageprocessing/is
 
 Tests for many library functions are included in the `tests` diretory. Install the `pytest` module through your package
 manager (e.g. `pip install pytest`) and then tests can be run from the main directory using the command:
-
+pyexiftool==0.4.13
 ```bash
 pytest
 ```
@@ -137,3 +137,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+## Notes
+
+Downgraded `pyexiftool` to `pip install pyexiftool==0.4.13` following [#117](https://github.com/micasense/imageprocessing/issues/177) as `pyexiftool>=0.5.0` doesn't support the `get_metadata()` method anymore.
+
